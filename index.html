@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Vue_calculator</title>
+</head>
+<body>
+    <div id="app">
+        <div class="calculatorNumb">
+            <div class="output">{{displayValue}}</div>
+            <div class="buttons" @click="CalNumber('1');">1</div>
+            <div class="buttons" @click="CalNumber('2');">2</div>
+            <div class="buttons" @click="CalNumber('3');">3</div>
+            <div class="buttons" @click="CalNumber('+');">+</div>
+            <div class="buttons" @click="CalNumber('4');">4</div>
+            <div class="buttons" @click="CalNumber('5');">5</div>
+            <div class="buttons" @click="CalNumber('6');">6</div>
+            <div class="buttons" @click="CalNumber('-');">-</div>
+            <div class="buttons" @click="CalNumber('7');">7</div>
+            <div class="buttons" @click="CalNumber('8');">8</div>
+            <div class="buttons" @click="CalNumber('9');">9</div>
+            <div class="buttons" @click="CalNumber('*');">X</div>
+            <div class="buttons" @click="clear();">AC</div>
+            <div class="buttons" @click="CalNumber('0');">0</div>
+            <div class="buttons" @click="CalNumber('=');">=</div>
+            <div class="buttons" @click="CalNumber('/');">/</div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js">	
+     </script>
+     <script>
+         new Vue({
+  el: "#app",
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    CalNumber(e) {
+		
+			if(this.value.slice(-1) != '=')
+				this.value += e;
+		},
+		clear(){
+			this.value = '';
+		}
+	},
+	computed: {
+    displayValue: function () {
+			if(this.value=='')
+				return 0;
+			if(this.value.slice(-1) == '=')
+				return eval(this.value.slice(0, -1));
+			else{
+				return this.value;
+			}
+    }
+  }
+});
+     </script>
+</body>
+</html>

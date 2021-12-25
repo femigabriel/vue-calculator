@@ -1,0 +1,49 @@
+
+
+body{
+	background: url('https://images.unsplash.com/photo-1625225233840-695456021cde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNhbGN1bGF0b3J8ZW58MHx8MHx8&w=1000&q=80');
+    background-size: cover;
+	font-family: san serif;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+align-items: center;
+	font-size: 20px;
+	text-align: center;
+}
+.calculatorNumb {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 3px;
+    background:lightslategrey;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px;
+  }
+  
+  .output {
+    background-color: rgba(255, 255, 255, 0.9);
+    grid-column: 1 / 5;
+      text-align: right;
+    padding: 20px 10px;
+      font-size: 40px;
+  }
+  
+  .buttons {
+    background-color:lightgoldenrodyellow;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+   
+    cursor: pointer;
+    transition: all 0.8s;
+  }
+  .buttons:hover{
+ background-color: #999;
+ color: beige;
+ transition: all 0.5s;
+  }
